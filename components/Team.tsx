@@ -83,7 +83,7 @@ const Team: React.FC = () => {
 
               {/* Tech Filtered Image */}
               <img 
-                src="media/sherry_profle.jpeg" 
+                src="media/sherry_profile.jpeg" 
                 alt="Sherry Yang" 
                 className="w-full h-full object-cover filter grayscale contrast-125 brightness-75 mix-blend-luminosity opacity-80 group-hover:opacity-100 transition-all duration-700"
               />

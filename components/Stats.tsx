@@ -11,12 +11,12 @@ const useCountUp = (end: number, duration: number = 2000, startCounting: boolean
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      
+
       // Easing function for smooth deceleration
       const easeOutQuart = (x: number): number => 1 - Math.pow(1 - x, 4);
-      
+
       setCount(Math.floor(easeOutQuart(progress) * end));
-      
+
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }
@@ -37,7 +37,7 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, isVisible }) => {
   // Extract number and non-numeric suffix
   const numValue = parseInt(value.replace(/\D/g, '')) || 0;
   const suffix = value.replace(/[0-9]/g, '');
-  
+
   const count = useCountUp(numValue, 2500, isVisible);
 
   return (
@@ -58,8 +58,8 @@ const Stats: React.FC = () => {
 
   const stats = [
     { value: "90M+", label: "Ecosystem Reach" },
-    { value: "16+", label: "Family Office Govs" },
-    { value: "42", label: "AI Agents" },
+    { value: "16+", label: "FO Partners" },
+    { value: "42", label: "AI Partners" },
     { value: "500+", label: "Global Campuses" },
   ];
 
@@ -82,12 +82,12 @@ const Stats: React.FC = () => {
   }, []);
 
   return (
-    <section 
-      id="ecosystem" 
+    <section
+      id="ecosystem"
       ref={sectionRef}
       className={`relative py-20 -mt-16 z-20 px-4`}
     >
-      <div 
+      <div
         className={`max-w-7xl mx-auto backdrop-blur-xl bg-[#030303]/90 border border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.5)] fade-up ${isVisible ? 'visible' : ''}`}
       >
         {/* Decorative Corners */}
